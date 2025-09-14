@@ -122,6 +122,35 @@
         </form>
       </div>
     </dialog>
+    <dialog id="dialogDelete">
+      <div class="dialog__content">
+        <div class="dialog__header">
+          <h2 class="dialog__title">Xác nhận xóa</h2>
+          <button
+            class="dialog__close"
+            aria-label="Close"
+            onClick="closeDialog()"
+          >
+            ×
+          </button>
+        </div>
+        <form class="dialog__form" id="dialogFormDelete" method="dialog">
+          <div class="dialog__form-container">
+            <span>Bạn có chắc chắn muốn xóa người dùng này không?</span>
+          </div>
+          <div class="dialog__actions">
+            <button type="submit" class="user-card__button--delete">Xóa</button>
+            <button
+              type="button"
+              class="dialog__button dialog__button--secondary"
+              onClick="closeDialog()"
+            >
+              Hủy
+            </button>
+          </div>
+        </form>
+      </div>
+    </dialog>
     <script src="./script.js"></script>
   </body>
 </html>

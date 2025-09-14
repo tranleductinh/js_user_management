@@ -104,6 +104,9 @@ button:active {
   box-shadow: 8px 8px 16px #141421, -8px -8px 16px #29293d;
   transition: all 0.3s ease-in-out;
 }
+.user-card:hover {
+  transform: translateY(-3px);
+}
 .user-card__actions {
   display: flex;
   gap: 10px;
@@ -169,6 +172,9 @@ dialog[open] {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+.dialog__form-container span {
+  color: #94a3b8;
 }
 .dialog__form-group {
   display: flex;

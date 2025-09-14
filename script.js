@@ -3,7 +3,9 @@ let users = localStorage.getItem("user")
   : [];
 
 const dialog = document.getElementById("dialog");
+const dialogDelete = document.getElementById("dialogDelete");
 const dialogForm = document.getElementById("dialogForm");
+const dialogFormDelete = document.getElementById("dialogFormDelete");
 const userManagement = document.querySelector(".user-management__empty");
 const listUser = document.getElementById("list_user");
 
@@ -15,9 +17,13 @@ function openDialog() {
 
 function closeDialog() {
   dialog.close();
+  dialogDelete.close();
   dialogForm.reset();
 }
 
+function deleteDialog() {
+  dialogDelete.show();
+}
 function renderUser() {
   if (users.length === 0) {
     userManagement.style.display = "block";
@@ -48,13 +54,19 @@ function renderUser() {
 renderUser();
 
 function deleteUser(id) {
-  users = users.filter((u) => u.id !== id);
-  saveUser();
-  renderUser();
+  deleteDialog()
+  dialogFormDelete.addEventListener("submit", function (e) {
+    e.preventDefault();
+    users = users.filter((u) => u.id !== id);
+    saveUser();
+    renderUser();
+    closeDialog();
+  });
 }
 function saveUser() {
   localStorage.setItem("user", JSON.stringify(users));
 }
+
 dialogForm.addEventListener("submit", function (e) {
   e.preventDefault();
   const userName = document.getElementById("user-name").value;
