@@ -10,7 +10,7 @@ const listUser = document.getElementById("list_user");
 function openDialog() {
   document.getElementById("error-name").innerText = "";
   document.getElementById("error-phone").innerText = "";
-  dialog.showModal();
+  dialog.show();
 }
 
 function closeDialog() {
