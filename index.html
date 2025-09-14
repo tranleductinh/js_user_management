@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản Lý Người Dùng</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="user-management">
+      <header class="user-management__header">
+        <h1 class="user-management__title">Quản Lý Người Dùng</h1>
+      </header>
+      <div class="content">
+        <section class="user-management__controls">
+          <div class="user-management__search">
+            <input
+              type="text"
+              class="user-management__search-input"
+              placeholder="🔍 Tìm kiếm theo tên hoặc email..."
+            />
+          </div>
+          <button
+            class="user-management__button user-management__button--primary"
+            onClick="openDialog()"
+          >
+            Thêm Người Dùng Mới
+          </button>
+        </section>
+        <section class="user-management__list">
+          <div class="user-management__empty">
+            <div class="user-management__empty-text">
+              <h3>Chưa có người dùng nào</h3>
+              Hãy thêm người dùng đầu tiên của bạn!
+            </div>
+          </div>
+          <div id="list_user" class="user-management__list-container">
+            <!-- <article class="user-card">
+              <h3 class="user-card__name">tinh</h3>
+              <p class="user-card__email">Email: tinh@gmail.com</p>
+              <p class="user-card__phone">Phone: 0982125147</p>
+              <div class="user-card__actions">
+                <button class="user-card__button user-card__button--edit">
+                  Edit
+                </button>
+                <button class="user-card__button user-card__button--delete">
+                  Delete
+                </button>
+              </div>
+            </article> -->
+          </div>
+        </section>
+      </div>
+    </main>
+    <dialog class="dialog dialog--create-user" id="dialog">
+      <div class="dialog__content">
+        <div class="dialog__header">
+          <h2 class="dialog__title">Create User</h2>
+          <button
+            class="dialog__close"
+            aria-label="Close"
+            onClick="closeDialog()"
+          >
+            ×
+          </button>
+        </div>
+        <form class="dialog__form" id="dialogForm" method="dialog">
+          <div class="dialog__form-container">
+            <div class="dialog__form-group">
+              <label for="user-name" class="dialog__label">Họ và Tên *</label>
+              <input
+                type="text"
+                id="user-name"
+                name="name"
+                class="dialog__input"
+                required
+              />
+              <div id="error-name" class="error"></div>
+            </div>
+
+            <div class="dialog__form-group">
+              <label for="user-email" class="dialog__label">Email *</label>
+              <input
+                type="email"
+                id="user-email"
+                name="email"
+                class="dialog__input"
+                required
+              />
+              <div></div>
+            </div>
+
+            <div class="dialog__form-group">
+              <label for="user-phone" class="dialog__label"
+                >Số Điện Thoại *</label
+              >
+              <input
+                type="tel"
+                id="user-phone"
+                name="phone"
+                class="dialog__input"
+                required
+              />
+              <div class="error" id="error-phone"></div>
+            </div>
+          </div>
+          <div class="dialog__actions">
+            <button
+              type="submit"
+              class="dialog__button dialog__button--primary"
+            >
+              Create User
+            </button>
+            <button
+              type="button"
+              class="dialog__button dialog__button--secondary"
+              onClick="closeDialog()"
+            >
+              Hủy
+            </button>
+          </div>
+        </form>
+      </div>
+    </dialog>
+    <script src="./script.js"></script>
+  </body>
+</html>
