@@ -22,7 +22,7 @@
           </div>
           <button
             class="user-management__button user-management__button--primary"
-            onClick="openDialog()"
+            onclick="openDialog()"
           >
             Thêm Người Dùng Mới
           </button>
@@ -55,11 +55,11 @@
     <dialog class="dialog dialog--create-user" id="dialog">
       <div class="dialog__content">
         <div class="dialog__header">
-          <h2 class="dialog__title">Create User</h2>
+          <h2 id="dialogTitle" class="dialog__title">Create User</h2>
           <button
             class="dialog__close"
             aria-label="Close"
-            onClick="closeDialog()"
+            onclick="closeDialog()"
           >
             ×
           </button>
@@ -108,13 +108,14 @@
             <button
               type="submit"
               class="dialog__button dialog__button--primary"
+              id="dialogSubmit"
             >
               Create User
             </button>
             <button
               type="button"
               class="dialog__button dialog__button--secondary"
-              onClick="closeDialog()"
+              onclick="closeDialog()"
             >
               Hủy
             </button>
@@ -129,7 +130,7 @@
           <button
             class="dialog__close"
             aria-label="Close"
-            onClick="closeDialog()"
+            onclick="closeDialog()"
           >
             ×
           </button>
@@ -143,7 +144,7 @@
             <button
               type="button"
               class="dialog__button dialog__button--secondary"
-              onClick="closeDialog()"
+              onclick="closeDialog()"
             >
               Hủy
             </button>

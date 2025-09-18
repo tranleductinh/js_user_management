@@ -201,6 +201,11 @@ dialog[open] {
 .error {
   color: #f87171;
 }
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+  -webkit-text-fill-color: #fff !important;
+  transition: background-color 9999s ease-in-out 0s !important;
+}
 @media (max-width: 768px) {
   .user-management__controls {
     grid-template-columns: 1fr;
